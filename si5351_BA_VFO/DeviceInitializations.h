@@ -119,18 +119,10 @@ void setupDisplay()   {
 void initializeVFOs()   { 
 
    // initially all oscillators are off
-   // set clocks to initial frequencies
-   
+   // since all the bands are driven by a single clock
+   // load the starting band frequency
    si5351.output_enable(SI5351_CLK0, 0);
-   vfoList[0]->loadFrequency();
-   delay(1); // let board settle
-   
-   si5351.output_enable(SI5351_CLK1, 0);
-   vfoList[1]->loadFrequency();
-   delay(1); // let board settle
-   
-   si5351.output_enable(SI5351_CLK2, 0);
-   vfoList[2]->loadFrequency();
+   vfoList[STARTING_VFO]->loadFrequency();
    delay(1); // let board settle
 }
 
