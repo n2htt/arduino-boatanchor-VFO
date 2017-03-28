@@ -99,7 +99,11 @@ public:
       mc_indicator = '~'; // this renders as a right arrow
       mc_freqDelta = 94;
        
-      mp_display = new LiquidCrystal_I2C(0x20, 4, 5, 6, 0, 1, 2, 3, 7, NEGATIVE);  // Set the LCD I2C address  
+#ifdef USE_SAINSMART_LCD_WITH_I2C_BACKPACK
+	mp_display = new LiquidCrystal_I2C(0x3f, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);  // Set the LCD I2C address
+#else
+    mp_display = new LiquidCrystal_I2C(0x20, 4, 5, 6, 0, 1, 2, 3, 7, NEGATIVE);        
+#endif	
       mp_display->begin(20,4);         // initialize the lcd
       mp_display->clear();
       mp_display->backlight();

@@ -105,6 +105,13 @@
 #define USE_LIQUIDCRYSTAL_LIBRARY
 #define USE_LCD_20X4_DISPLAY 
 
+/**
+ * Uncomment the line below to use the initialization parameters
+ * for the Sainsmart 20 x 4 LCD display with I2C backpack installed. 
+ * Leave it commented out if you are using an add-on I2C backpack.
+ */
+ //  #define USE_SAINSMART_LCD_WITH_I2C_BACKPACK
+
 #include <Wire.h>
 #include <SPI.h>
 
