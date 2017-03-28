@@ -34,8 +34,12 @@
 /**
  * initialize vfo list values
  */
-void setupVFOs()   {     
+void setupVFOs()   { 
+#ifdef USE_VERSION_1_SI5351_LIBRARY    
    si5351.init(SI5351_CRYSTAL_LOAD_8PF, 0);
+#else   
+   si5351.init(SI5351_CRYSTAL_LOAD_8PF, 0, 0);
+#endif	
    
    delay(1); // let board settle after init
    

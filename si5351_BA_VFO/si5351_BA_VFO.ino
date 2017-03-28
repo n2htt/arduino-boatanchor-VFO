@@ -115,6 +115,13 @@
 #include <Wire.h>
 #include <SPI.h>
 
+/**
+ * Uncomment the line below to use the old version 1.x si5351
+ * library. 
+ * Leave it commented out if you are using the current version, 2.x.
+ */
+ // #define USE_VERSION_1_SI5351_LIBRARY
+
 #include <si5351.h>
 
 #ifdef USE_LIQUIDCRYSTAL_LIBRARY

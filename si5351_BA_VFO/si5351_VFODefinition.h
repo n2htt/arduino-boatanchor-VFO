@@ -164,11 +164,18 @@ public:
     * takes effect immediately
     */
    virtual void loadFrequency()  {
+#ifdef USE_VERSION_1_SI5351_LIBRARY    
       si5351.set_freq(
                        ((unsigned long long)(((long long) frequency) + fixedFrequencyOffset))*SI5351_FREQ_MULT
                      , SI5351_PLL_FIXED
                      , si5351Clock
       );
+#else   
+      si5351.set_freq(
+                       ((unsigned long long)(((long long) frequency) + fixedFrequencyOffset))*SI5351_FREQ_MULT
+                     , si5351Clock
+      );
+#endif		   
    }
 };
 
