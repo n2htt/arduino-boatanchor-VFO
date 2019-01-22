@@ -198,9 +198,9 @@
 #define FREQ_VFO_B_MIN              7000000
 #define FREQ_VFO_B_MAX              7300000
 
-#define FREQ_VFO_C_DEFAULT         10120000
-#define FREQ_VFO_C_MIN             10100000
-#define FREQ_VFO_C_MAX             10150000
+#define FREQ_VFO_C_DEFAULT         14060000
+#define FREQ_VFO_C_MIN             14000000
+#define FREQ_VFO_C_MAX             14350000
 
 /**
  * delay times

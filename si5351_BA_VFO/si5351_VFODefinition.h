@@ -175,7 +175,10 @@ public:
                        ((unsigned long long)(((long long) frequency) + fixedFrequencyOffset))*SI5351_FREQ_MULT
                      , si5351Clock
       );
-#endif		   
+#endif	
+     // turn off clock at new freq	   
+     si5351.output_enable(si5351Clock, 0);
+     running = false;      
    }
 };
 
